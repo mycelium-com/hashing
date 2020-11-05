@@ -19,6 +19,18 @@ set_target_properties(hashing PROPERTIES
    PUBLIC_HEADER "include/hmac_sha2.h;include/hmac_sha3.h;include/ripemd160.h;include/sha2.h;include/sha3.h"
 )
 
+add_executable(test_sha2 misc/test_sha2.c)
+add_executable(test_sha3 misc/test_sha3.c)
+add_executable(test_ripemd160 misc/test_ripemd160.c)
+
+target_include_directories(test_sha2 PRIVATE include)
+target_include_directories(test_sha3 PRIVATE include)
+target_include_directories(test_ripemd160 PRIVATE include)
+
+target_link_libraries(test_sha2 hashing)
+target_link_libraries(test_sha3 hashing)
+target_link_libraries(test_ripemd160 hashing)
+
 include(GNUInstallDirs)
 install(TARGETS hashing
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
