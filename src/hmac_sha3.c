@@ -55,7 +55,7 @@ void hmac_sha3_224_init(hmac_sha3_224_ctx *ctx, const unsigned char *key,
     } else {
         if (key_size > SHA3_224_BLOCK_LENGTH){
             num = SHA3_224_DIGEST_LENGTH;
-            sha3_384(key, key_size, key_temp);
+            sha3_224(key, key_size, key_temp);
             key_used = key_temp;
         } else { /* key_size > SHA3_224_BLOCK_LENGTH */
             key_used = key;
