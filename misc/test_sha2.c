@@ -66,10 +66,10 @@ int main() {
         const char *input = testData[i].input;
         const int input_len = testData[i].input_len;
 
-        sha224((const uint8_t *)input, input_len, digest);
+        myc_sha224((const uint8_t *)input, input_len, digest);
 
         printf("sha224(%s): ", input);
-        print((const uint8_t *)digest, SHA224_DIGEST_SIZE);
+        print((const uint8_t *)digest, MYC_SHA224_DIGEST_SIZE);
         printf("\n");
     }
 
@@ -79,10 +79,10 @@ int main() {
         const char *input = testData[i].input;
         const int input_len = testData[i].input_len;
 
-        sha256((const uint8_t *)input, input_len, digest);
+        myc_sha256((const uint8_t *)input, input_len, digest);
 
         printf("sha256(%s): ", input);
-        print((const uint8_t *)digest, SHA256_DIGEST_SIZE);
+        print((const uint8_t *)digest, MYC_SHA256_DIGEST_SIZE);
         printf("\n");
     }
 
@@ -92,10 +92,10 @@ int main() {
         const char *input = testData[i].input;
         const int input_len = testData[i].input_len;
 
-        sha384((const uint8_t *)input, input_len, digest);
+        myc_sha384((const uint8_t *)input, input_len, digest);
 
         printf("sha384(%s): ", input);
-        print((const uint8_t *)digest, SHA384_DIGEST_SIZE);
+        print((const uint8_t *)digest, MYC_SHA384_DIGEST_SIZE);
         printf("\n");
     }
 
@@ -105,10 +105,10 @@ int main() {
         const char *input = testData[i].input;
         const int input_len = testData[i].input_len;
 
-        sha512((const uint8_t *)input, input_len, digest);
+        myc_sha512((const uint8_t *)input, input_len, digest);
 
         printf("sha512(%s): ", input);
-        print((const uint8_t *)digest, SHA512_DIGEST_SIZE);
+        print((const uint8_t *)digest, MYC_SHA512_DIGEST_SIZE);
         printf("\n");
     }
 

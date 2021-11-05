@@ -33,8 +33,8 @@
  * SUCH DAMAGE.
  */
 
-#ifndef HMAC_SHA3_H
-#define HMAC_SHA3_H
+#ifndef MYC_HMAC_SHA3_H
+#define MYC_HMAC_SHA3_H
 
 #include "sha3.h"
 
@@ -43,94 +43,94 @@ extern "C" {
 #endif
 
 typedef struct {
-    SHA3_CTX ctx_inside;
-    SHA3_CTX ctx_outside;
+    MYC_SHA3_CTX ctx_inside;
+    MYC_SHA3_CTX ctx_outside;
 
     /* for hmac_reinit */
-    SHA3_CTX ctx_inside_reinit;
-    SHA3_CTX ctx_outside_reinit;
+    MYC_SHA3_CTX ctx_inside_reinit;
+    MYC_SHA3_CTX ctx_outside_reinit;
 
-    unsigned char block_ipad[SHA3_224_BLOCK_LENGTH];
-    unsigned char block_opad[SHA3_224_BLOCK_LENGTH];
-} hmac_sha3_224_ctx;
+    unsigned char block_ipad[MYC_SHA3_224_BLOCK_LENGTH];
+    unsigned char block_opad[MYC_SHA3_224_BLOCK_LENGTH];
+} myc_hmac_sha3_224_ctx;
 
 typedef struct {
-    SHA3_CTX ctx_inside;
-    SHA3_CTX ctx_outside;
+    MYC_SHA3_CTX ctx_inside;
+    MYC_SHA3_CTX ctx_outside;
 
     /* for hmac_reinit */
-    SHA3_CTX ctx_inside_reinit;
-    SHA3_CTX ctx_outside_reinit;
+    MYC_SHA3_CTX ctx_inside_reinit;
+    MYC_SHA3_CTX ctx_outside_reinit;
 
-    unsigned char block_ipad[SHA3_256_BLOCK_LENGTH];
-    unsigned char block_opad[SHA3_256_BLOCK_LENGTH];
-} hmac_sha3_256_ctx;
+    unsigned char block_ipad[MYC_SHA3_256_BLOCK_LENGTH];
+    unsigned char block_opad[MYC_SHA3_256_BLOCK_LENGTH];
+} myc_hmac_sha3_256_ctx;
 
 typedef struct {
-    SHA3_CTX ctx_inside;
-    SHA3_CTX ctx_outside;
+    MYC_SHA3_CTX ctx_inside;
+    MYC_SHA3_CTX ctx_outside;
 
     /* for hmac_reinit */
-    SHA3_CTX ctx_inside_reinit;
-    SHA3_CTX ctx_outside_reinit;
+    MYC_SHA3_CTX ctx_inside_reinit;
+    MYC_SHA3_CTX ctx_outside_reinit;
 
-    unsigned char block_ipad[SHA3_384_BLOCK_LENGTH];
-    unsigned char block_opad[SHA3_384_BLOCK_LENGTH];
-} hmac_sha3_384_ctx;
+    unsigned char block_ipad[MYC_SHA3_384_BLOCK_LENGTH];
+    unsigned char block_opad[MYC_SHA3_384_BLOCK_LENGTH];
+} myc_hmac_sha3_384_ctx;
 
 typedef struct {
-    SHA3_CTX ctx_inside;
-    SHA3_CTX ctx_outside;
+    MYC_SHA3_CTX ctx_inside;
+    MYC_SHA3_CTX ctx_outside;
 
     /* for hmac_reinit */
-    SHA3_CTX ctx_inside_reinit;
-    SHA3_CTX ctx_outside_reinit;
+    MYC_SHA3_CTX ctx_inside_reinit;
+    MYC_SHA3_CTX ctx_outside_reinit;
 
-    unsigned char block_ipad[SHA3_512_BLOCK_LENGTH];
-    unsigned char block_opad[SHA3_512_BLOCK_LENGTH];
-} hmac_sha3_512_ctx;
+    unsigned char block_ipad[MYC_SHA3_512_BLOCK_LENGTH];
+    unsigned char block_opad[MYC_SHA3_512_BLOCK_LENGTH];
+} myc_hmac_sha3_512_ctx;
 
-void hmac_sha3_224_init(hmac_sha3_224_ctx *ctx, const unsigned char *key,
+void myc_hmac_sha3_224_init(myc_hmac_sha3_224_ctx *ctx, const unsigned char *key,
                       unsigned int key_size);
-void hmac_sha3_224_reinit(hmac_sha3_224_ctx *ctx);
-void hmac_sha3_224_update(hmac_sha3_224_ctx *ctx, const unsigned char *message,
+void myc_hmac_sha3_224_reinit(myc_hmac_sha3_224_ctx *ctx);
+void myc_hmac_sha3_224_update(myc_hmac_sha3_224_ctx *ctx, const unsigned char *message,
                         unsigned int message_len);
-void hmac_sha3_224_final(hmac_sha3_224_ctx *ctx, unsigned char *mac,
+void myc_hmac_sha3_224_final(myc_hmac_sha3_224_ctx *ctx, unsigned char *mac,
                        unsigned int mac_size);
-void hmac_sha3_224(const unsigned char *key, unsigned int key_size,
+void myc_hmac_sha3_224(const unsigned char *key, unsigned int key_size,
                  const unsigned char *message, unsigned int message_len,
                  unsigned char *mac, unsigned mac_size);
 
-void hmac_sha3_256_init(hmac_sha3_256_ctx *ctx, const unsigned char *key,
+void myc_hmac_sha3_256_init(myc_hmac_sha3_256_ctx *ctx, const unsigned char *key,
                       unsigned int key_size);
-void hmac_sha3_256_reinit(hmac_sha3_256_ctx *ctx);
-void hmac_sha3_256_update(hmac_sha3_256_ctx *ctx, const unsigned char *message,
+void myc_hmac_sha3_256_reinit(myc_hmac_sha3_256_ctx *ctx);
+void myc_hmac_sha3_256_update(myc_hmac_sha3_256_ctx *ctx, const unsigned char *message,
                         unsigned int message_len);
-void hmac_sha3_256_final(hmac_sha3_256_ctx *ctx, unsigned char *mac,
+void myc_hmac_sha3_256_final(myc_hmac_sha3_256_ctx *ctx, unsigned char *mac,
                        unsigned int mac_size);
-void hmac_sha3_256(const unsigned char *key, unsigned int key_size,
+void myc_hmac_sha3_256(const unsigned char *key, unsigned int key_size,
                  const unsigned char *message, unsigned int message_len,
                  unsigned char *mac, unsigned mac_size);
 
-void hmac_sha3_384_init(hmac_sha3_384_ctx *ctx, const unsigned char *key,
+void myc_hmac_sha3_384_init(myc_hmac_sha3_384_ctx *ctx, const unsigned char *key,
                       unsigned int key_size);
-void hmac_sha3_384_reinit(hmac_sha3_384_ctx *ctx);
-void hmac_sha3_384_update(hmac_sha3_384_ctx *ctx, const unsigned char *message,
+void myc_hmac_sha3_384_reinit(myc_hmac_sha3_384_ctx *ctx);
+void myc_hmac_sha3_384_update(myc_hmac_sha3_384_ctx *ctx, const unsigned char *message,
                         unsigned int message_len);
-void hmac_sha3_384_final(hmac_sha3_384_ctx *ctx, unsigned char *mac,
+void myc_hmac_sha3_384_final(myc_hmac_sha3_384_ctx *ctx, unsigned char *mac,
                        unsigned int mac_size);
-void hmac_sha3_384(const unsigned char *key, unsigned int key_size,
+void myc_hmac_sha3_384(const unsigned char *key, unsigned int key_size,
                  const unsigned char *message, unsigned int message_len,
                  unsigned char *mac, unsigned mac_size);
 
-void hmac_sha3_512_init(hmac_sha3_512_ctx *ctx, const unsigned char *key,
+void myc_hmac_sha3_512_init(myc_hmac_sha3_512_ctx *ctx, const unsigned char *key,
                       unsigned int key_size);
-void hmac_sha3_512_reinit(hmac_sha3_512_ctx *ctx);
-void hmac_sha3_512_update(hmac_sha3_512_ctx *ctx, const unsigned char *message,
+void myc_hmac_sha3_512_reinit(myc_hmac_sha3_512_ctx *ctx);
+void myc_hmac_sha3_512_update(myc_hmac_sha3_512_ctx *ctx, const unsigned char *message,
                         unsigned int message_len);
-void hmac_sha3_512_final(hmac_sha3_512_ctx *ctx, unsigned char *mac,
+void myc_hmac_sha3_512_final(myc_hmac_sha3_512_ctx *ctx, unsigned char *mac,
                        unsigned int mac_size);
-void hmac_sha3_512(const unsigned char *key, unsigned int key_size,
+void myc_hmac_sha3_512(const unsigned char *key, unsigned int key_size,
                  const unsigned char *message, unsigned int message_len,
                  unsigned char *mac, unsigned mac_size);
 

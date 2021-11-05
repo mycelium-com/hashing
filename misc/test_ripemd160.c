@@ -46,7 +46,7 @@ struct testVector testData[4] = {
 
 int main() {
     // Array for generated hashes
-    uint8_t digest[RIPEMD160_DIGEST_LENGTH];
+    uint8_t digest[MYC_RIPEMD160_DIGEST_LENGTH];
 
     printf("Testing RIPEMD-160 against test vectors:\n");
     
@@ -54,10 +54,10 @@ int main() {
         const char *input = testData[i].input;
         const int input_len = testData[i].input_len;
 
-        ripemd160((const uint8_t *)input, input_len, digest);
+        myc_ripemd160((const uint8_t *)input, input_len, digest);
 
         printf("ripemd160(%s): ", input);
-        print((const uint8_t *)digest, RIPEMD160_DIGEST_LENGTH);
+        print((const uint8_t *)digest, MYC_RIPEMD160_DIGEST_LENGTH);
         printf("\n");
     }
 

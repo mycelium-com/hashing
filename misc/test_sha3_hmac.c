@@ -316,10 +316,10 @@ int main() {
         const char *data = testData[i].data;
         const int data_len = testData[i].data_len;
 
-        hmac_sha3_224((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, SHA3_224_DIGEST_LENGTH);
+        myc_hmac_sha3_224((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, MYC_SHA3_224_DIGEST_LENGTH);
 
         printf("sha3_hmac_224 (case %d): ", i + 1);
-        print((const uint8_t *)digest, SHA3_224_DIGEST_LENGTH);
+        print((const uint8_t *)digest, MYC_SHA3_224_DIGEST_LENGTH);
         printf("\n");
     }
 
@@ -331,10 +331,10 @@ int main() {
         const char *data = testData[i].data;
         const int data_len = testData[i].data_len;
 
-        hmac_sha3_256((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, SHA3_256_DIGEST_LENGTH);
+        myc_hmac_sha3_256((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, MYC_SHA3_256_DIGEST_LENGTH);
 
         printf("sha3_hmac_256 (case %d): ", i + 1);
-        print((const uint8_t *)digest, SHA3_256_DIGEST_LENGTH);
+        print((const uint8_t *)digest, MYC_SHA3_256_DIGEST_LENGTH);
         printf("\n");
     }
 
@@ -346,10 +346,10 @@ int main() {
         const char *data = testData[i].data;
         const int data_len = testData[i].data_len;
 
-        hmac_sha3_384((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, SHA3_384_DIGEST_LENGTH);
+        myc_hmac_sha3_384((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, MYC_SHA3_384_DIGEST_LENGTH);
 
         printf("sha2_hmac_384 (case %d): ", i + 1);
-        print((const uint8_t *)digest, SHA3_384_DIGEST_LENGTH);
+        print((const uint8_t *)digest, MYC_SHA3_384_DIGEST_LENGTH);
         printf("\n");
     }
 
@@ -361,10 +361,10 @@ int main() {
         const char *data = testData[i].data;
         const int data_len = testData[i].data_len;
 
-        hmac_sha3_512((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, SHA3_512_DIGEST_LENGTH);
+        myc_hmac_sha3_512((const uint8_t *)key, key_len, (const uint8_t*)data, data_len, digest, MYC_SHA3_512_DIGEST_LENGTH);
 
         printf("sha2_hmac_512 (case %d): ", i + 1);
-        print((const uint8_t *)digest, SHA3_512_DIGEST_LENGTH);
+        print((const uint8_t *)digest, MYC_SHA3_512_DIGEST_LENGTH);
         printf("\n");
     }
 
