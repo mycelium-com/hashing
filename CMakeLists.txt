@@ -14,6 +14,7 @@ set(hashing_src
 if (NOT TARGET hashing)
     add_library(hashing ${hashing_src})
     target_include_directories(hashing PRIVATE include)
+    target_compile_definitions(hashing PRIVATE USE_KECCAK=1)
 
     set_target_properties(hashing PROPERTIES
             VERSION ${PROJECT_VERSION}
