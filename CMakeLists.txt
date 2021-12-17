@@ -28,6 +28,7 @@ if (NOT TARGET hashing)
             PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
+if (BUILD_UTILS)
 
 if(NOT TARGET test_sha2)
     add_executable(test_sha2 misc/test_sha2.c)
@@ -57,6 +58,8 @@ if(NOT TARGET test_sha3_hmac)
     add_executable(test_sha3_hmac misc/test_sha3_hmac.c)
     target_include_directories(test_sha3_hmac PRIVATE include)
     target_link_libraries(test_sha3_hmac hashing)
+endif()
+
 endif()
 
 configure_file(hashing.pc.in hashing.pc @ONLY)
